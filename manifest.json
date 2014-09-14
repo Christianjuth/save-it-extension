@@ -17,8 +17,7 @@
     "permissions": [
         "tabs",
         "notifications",
-        "contextMenus",
-        "storage"
+        "contextMenus"
     ],
 
     "background" : {
