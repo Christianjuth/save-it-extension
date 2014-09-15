@@ -12,9 +12,6 @@ body{
     font-family: oswald;
     font-weight: 300;
     font-size: 0px;
-
-    -webkit-user-select:none;
-    user-select:none;
 }
 
 body{
@@ -34,8 +31,6 @@ body{
     margin-bottom: 55px;
 
     display: inline-block;
-
-    /*    margin-top: 146px;*/
 
     font-family: oswald;
 
