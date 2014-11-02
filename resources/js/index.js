@@ -12,7 +12,7 @@ $(document).ready(function(){
 });
 
 function reloadOldUrls(callback, variable) {
-    $("#saved-tabs").children().remove(); //removes current tab items
+    $("#content").children().remove(); //removes current tab items
     var tabs = localStorage.savedTabs.split('^'); //get array of new tabs
     var starredTabs = new Array;
     var numberOfTabs = tabs.length; //set number of tabs
@@ -27,8 +27,6 @@ function reloadOldUrls(callback, variable) {
             starredTabs.push(tabs[i]);
         }
     }
-
-//    chrome.browserAction.setBadgeText ( { text: String(tabs.length) } );
 
     //sort array by date
     tabs.sort(function(a, b){
@@ -69,7 +67,7 @@ function reloadOldUrls(callback, variable) {
             var nav = "";
 
             if($(dateContainer).text() != date){
-                nav = $("<nav><div class='title'><h1>" + date + "</h1><h2>restore session</h2></div></nav>").appendTo("#saved-tabs");
+                nav = $("<nav><div class='title'><h1>" + date + "</h1><h2>restore session</h2></div></nav>").appendTo("#content");
 
                 $(nav).children(".title").children("h2").click(function() {
                     var tabs = $(this).parent().parent().children(".tab-container").children(".url");
@@ -88,7 +86,7 @@ function reloadOldUrls(callback, variable) {
             }
 
             else{
-                nav = $("#saved-tabs > nav")[$("nav > .title > h1").length - 1];
+                nav = $("#content > nav")[$("nav > .title > h1").length - 1];
             }
 
             if(tab.favIconUrl != undefined){
@@ -126,7 +124,7 @@ function reloadOldUrls(callback, variable) {
     }
 
     if(starredTabs.length > 0){
-        var starredTabsContainer = $("<nav id='starred-tabs'><div class='title'><h1>Starred Tabs</h1><h2>restore starred</h2></div></nav>").prependTo("#saved-tabs");
+        var starredTabsContainer = $("<nav id='starred-tabs'><div class='title'><h1>Starred Tabs</h1><h2>restore starred</h2></div></nav>").prependTo("#content");
 
         for(i= 0; i < starredTabs.length; i++){
             var tab = starredTabs[starredTabs.length - (i + 1)]; //get html tab element

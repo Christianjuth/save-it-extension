@@ -2,74 +2,30 @@
 
 html,
 body{
-    height: 100%;
-    width: 100%;
-
-    margin: 0px;
-    padding: 0px;
-    overflow: hidden;
-
     font-family: oswald;
     font-weight: 300;
     font-size: 0px;
 }
 
-body{
-    background-color: #eee;
-    background-attachment:fixed;
-
-    overflow: auto;
-}
-
-#page{
-    height: calc(100% - 110px);
-    width: 44%;
-
-    margin-right: 28%;
-    margin-left: 28%;
-    margin-top: 55px;
-    margin-bottom: 55px;
-
-    display: inline-block;
-
-    font-family: oswald;
-
-    background-color: none;
-}
-
-#saved-tabs-container{
-    height: calc(100% - 46px);
-    width: calc(100% - 38px);
-    border-radius: 4px;
-
-    padding: 23px 15px 23px 23px;
-    background-color: #fff;
-
-    position:relative;
-    display: inline-block;
-
-    box-shadow: rgba(0, 0, 0, .10) 0px 2px 1px, rgba(0, 0, 0, .10) 0px 0px 1px;
-}
-
-#saved-tabs > nav{
+#content > nav{
     width: 100%;
     margin-bottom: 20px;
 }
 
-#saved-tabs > nav:last-child{
+#content > nav:last-child{
     margin-bottom: 0px;
 }
 
-#saved-tabs > nav > .title{
+#content > nav > .title{
     display: inline-block;
     width: 100%;
 
     margin-bottom: 7px;
 
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #ebebeb;
 }
 
-#saved-tabs > nav > .title > h1{
+#content > nav > .title > h1{
     float: left;
 
     padding: 0px;
@@ -79,7 +35,7 @@ body{
     font-weight: bold;
 }
 
-#saved-tabs > nav > .title > h2{
+#content > nav > .title > h2{
     float: right;
 
     padding: 0px;
@@ -91,7 +47,7 @@ body{
     cursor: pointer;
 }
 
-#saved-tabs{
+#content{
     height: 100%;
     width: 100%;
     padding-right: 6px;
@@ -172,24 +128,4 @@ body{
     font-size: 13px;
     color:#777;
     cursor:pointer;
-}
-
-/*tablet--------------------------->*/
-@media only screen and (min-width: 600px) and (max-width: 950px) {
-    #page{
-        width: 64%;
-
-        margin-right: 18%;
-        margin-left: 18%;
-    }
-}
-
-/*mobile--------------------------->*/
-@media only screen and (min-width: 0px) and (max-width: 600px) {
-    #page{
-        height: calc(100% - 46px);
-        width: calc(100% - 46px);
-
-        margin: 23px 23px 0px 23px;
-    }
 }
