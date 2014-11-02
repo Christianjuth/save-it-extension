@@ -3,7 +3,7 @@
 
     "name": "Save It!",
     "description": "",
-    "version": "1.1",
+    "version": "1.1.1",
     "browser_action": {
         "default_icon": "resources/icons/icon.png"
     },
@@ -17,12 +17,10 @@
     "permissions": [
         "tabs",
         "notifications",
-        "contextMenus",
-        "storage"
+        "contextMenus"
     ],
 
     "background" : {
         "page": "background/background.html"
     }
-
 }
