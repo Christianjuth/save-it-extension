@@ -23,8 +23,8 @@ var saveit = {
 
         $.each(tabs, function(key,val){
             val.date = new Date(val.date);
-            var date = val.date.getUTCDay() + "/" + val.date.getUTCMonth() + "/" + val.date.getFullYear();
-            if($(".title").length == 0 || date != $(".title").first().attr("date")){
+            var date = val.date.getDate() + "/" + val.date.getUTCMonth() + "/" + val.date.getFullYear();
+            if($(".title").length == 0 || date != $(".title").last().attr("date")){
                 $('<h1 class="title" date="' + date + '">' + date + '</h1>').appendTo("#content");
             }
 
