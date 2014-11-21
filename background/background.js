@@ -1,38 +1,17 @@
-if(localStorage.savedTabs == undefined){
-    localStorage.savedTabs = "";
+if(localStorage.tabs == undefined){
+    localStorage.tabs = JSON.stringify(new Array);
 }
 
 $(document).ready(function(){
     openIndex();
-
     chrome.browserAction.onClicked.addListener(function(tab) {
-        saveIt(tab);
-    });
-
-    //----------------------------------------->
-
-    function saveIt(tab) {
-        tabUrl = tab.url;
         tab.starred = false;
-
-        if(tabUrl.indexOf("http") != -1){
-            tab.date = new Date();
-
-            localStorage.savedTabs = JSON.stringify(tab) + "^" + localStorage.savedTabs;
-
-            chrome.tabs.remove(tab.id);
-        }
-
-        else{
-            var notification = webkitNotifications.createNotification(
-                '../resources/icon/error.png',  // icon url - can be relative
-                'Error',  // notification title
-                'This URL is not supported'  // notification body text
-            );
-
-            notification.show();
-        }
-    }
+        tab.time = new Date().getTime();
+        tab.date = new Date();
+        var savedTabs = JSON.parse(localStorage.tabs);
+        savedTabs.push(tab);
+        localStorage.tabs = JSON.stringify(savedTabs);
+    });
 });
 
 function openIndex() {
